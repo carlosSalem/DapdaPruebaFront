@@ -1,0 +1,51 @@
+<div class="container" style="margin-top: 10px;">
+    <div class="card">
+      <div class="card-header">
+        <h3>Usuarios</h3>
+        
+        <div class="container col-md-6">
+            <div class="card">
+              <div class="card-header">
+                <h3>Agregar Usuario</h3>
+              </div>
+              <div class="card-body">
+                <form action="">
+                  <div class="form-group">
+                    <label for="">Nombre:</label>
+                    <input  name="nombre" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="">Password:</label>
+                    <input name="pass" type="text" class="form-control">
+                  </div>
+                  <button  class="btn btn-danger">Guardar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr class="text-center">
+              <th>ID</th>
+              <th>NOMBRES</th>
+              <th>PASSWORD</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let usuario of usuarios"    class="text-center">
+              <td>{{usuario.id}}</td>
+              <td>{{usuario.nombre}}</td>
+              <td>{{usuario.pass}}</td>
+              
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+              
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
