@@ -3,7 +3,7 @@
       <div class="card-header">
         <h3>Usuarios</h3>
         
-        <div class="container col-md-6">
+        <!-- <div class="container col-md-6">
             <div class="card">
               <div class="card-header">
                 <h3>Agregar Usuario</h3>
@@ -23,7 +23,12 @@
               </div>
             </div>
           </div>
+      </div> -->
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded" type="button" [routerLink] = "['/usuarios/form']">Crear Usuario</button>
+
       </div>
+      
       <div class="card-body">
         <table class="table table-hover">
           <thead>
@@ -40,8 +45,8 @@
               <td>{{usuario.nombre}}</td>
               <td>{{usuario.pass}}</td>
               
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                <button class="btn btn-warning" name="button" [routerLink]="['/usuarios/form', usuario.id]">Editar</button>
+                <button class="btn btn-danger" style="margin-left: 10px;" (click)='delete(usuario)'>Delete</button>
               
             </tr>
           </tbody>

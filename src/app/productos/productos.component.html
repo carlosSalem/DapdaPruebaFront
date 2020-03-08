@@ -3,7 +3,7 @@
       <div class="card-header">
         <h3>Productos</h3>
         
-        <div class="container col-md-6">
+        <!-- <div class="container col-md-6">
             <div class="card">
               <div class="card-header">
                 <h3>Agregar Producto</h3>
@@ -22,7 +22,12 @@
                 </form>
               </div>
             </div>
+          </div> -->
+          <div class="my-2 text-left">
+            <button class="btn btn-rounded" type="button" [routerLink] = "['/productos/formPr']">Crear Producto</button>
+    
           </div>
+
       </div>
       <div class="card-body">
         <table class="table table-hover">
@@ -40,8 +45,8 @@
               <td>{{producto.nombre}}</td>
               <td>{{producto.cantidad}}</td>
               
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+                <button class="btn btn-warning" [routerLink]="['/productos/formPr', producto.id]">Editar</button>
+                <button class="btn btn-danger" style="margin-left: 10px;" (click)='delete(producto)'>Delete</button>
               
             </tr>
           </tbody>
