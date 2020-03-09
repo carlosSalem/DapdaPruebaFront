@@ -17,6 +17,17 @@ export class FormPeComponent implements OnInit {
     public activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.cargarPedido()
+  }
+  cargarPedido(): void{
+    this.activatedRoute.params.subscribe(params => {
+      let id = params['id']
+      if(id){
+        this.PedidoService.getPedido(id).subscribe( (pedido) => this.pedido = pedido)
+      }
+
+    })
+
   }
   public createPe(): void{
     this.PedidoService.createPe(this.pedido)
@@ -28,6 +39,15 @@ export class FormPeComponent implements OnInit {
       }
       );
     
+  }
+  update():void{
+    this.PedidoService.update(this.pedido)
+    .subscribe(pedido => {
+      this.router.navigate(['/pedidos'])
+      swal.fire('Usuario Actualizado', `Cliente ${this.pedido.nombre} actualizado con éxito!`, 'success')
+    }
+
+    )
   }
 
 }

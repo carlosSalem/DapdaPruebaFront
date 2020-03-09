@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, pipe } from 'rxjs';
 import { Pedido } from './pedido';
 import { map } from 'rxjs/operators';
-import { Usuario } from '../usuarios/usuario';
+
 
 
 

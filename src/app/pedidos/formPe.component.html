@@ -19,7 +19,7 @@
             <button class="btn btn-primary" role="button" (click)='createPe()' *ngIf="!pedido.id else elseBlock">Crear</button>
 
             <ng-template #elseBlock>
-              <button class="btn btn-primary" role="button">Editar</button>
+              <button class="btn btn-primary" role="button" (click)='update()'>Editar</button>
             </ng-template>
 
         </div>
